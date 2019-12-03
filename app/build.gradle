@@ -45,4 +45,9 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:+'
     //检测内存泄漏
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-3'
+    //标题栏
+    implementation 'com.github.yiranchunqiu:TitleBarView:1.1'
+    //utils
+    implementation project(':pxzutilscode')
+//    implementation 'com.github.yiranchunqiu:UtilsCode:1.0'
 }
