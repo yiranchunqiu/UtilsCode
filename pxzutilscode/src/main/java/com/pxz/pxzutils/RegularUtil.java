@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 类说明：
+ * 类说明：正则工具类
  * 联系：530927342@qq.com
  *
  * @author peixianzhong
