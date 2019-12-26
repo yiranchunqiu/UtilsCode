@@ -25,6 +25,15 @@ public class UUIDUtil {
      *
      * @return 返回格式化后的uuid
      */
+    public static String getUUIDFormat(String uuid) {
+        return uuid.replace("-", "");
+    }
+
+    /**
+     * 格式化uuid
+     *
+     * @return 返回格式化后的uuid
+     */
     public static String getUUIDFormat() {
         return UUID.randomUUID().toString().replace("-", "");
     }
@@ -36,7 +45,10 @@ public class UUIDUtil {
      * @param max 最大值
      * @return 随机数
      */
-    public static int nextInt(final int min, final int max) {
+    public static int randomNumber(final int min, final int max) {
+        if (min > max) {
+            return 0;
+        }
         Random rand = new Random();
         int tmp = Math.abs(rand.nextInt());
         return (tmp % (max - min + 1) + min);

@@ -6,6 +6,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.ScaleXSpan;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -26,7 +27,7 @@ public class StringUtil {
      * @return 返回的字符串
      */
     public static String ellipsis(String str, int i) {
-        if (str.length() >= i) {
+        if (null != str && str.length() >= i) {
             String string = str.substring(0, i - 1) + "…";
             return string;
         } else {
@@ -42,7 +43,7 @@ public class StringUtil {
      */
     public static String replaceBlankAll(String str) {
         String str2;
-        if (null != str && !str.equals("")) {
+        if (null != str && !"".equals(str)) {
             str2 = str.replaceAll(" ", "");
         } else {
             str2 = "";
@@ -59,7 +60,7 @@ public class StringUtil {
      */
     public static SpannableStringBuilder justifyString(String str, int size) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (TextUtils.isEmpty(str)) {
+        if (null == str && TextUtils.isEmpty(str)) {
             return spannableStringBuilder;
         }
         char[] chars = str.toCharArray();
@@ -86,8 +87,12 @@ public class StringUtil {
      * @return 格式化后的字符串
      */
     public static String isStringPhone(String string) {
-        String str = string.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
-        return str;
+        if (null != string && !string.equals("")) {
+            String str = string.replaceAll("(\\d{3})\\d{4}(\\d{4})", "$1****$2");
+            return str;
+        } else {
+            return string;
+        }
     }
 
     /**
@@ -97,15 +102,19 @@ public class StringUtil {
      * @return 格式化后的字符串
      */
     public static String isStringBankCard(String string) {
-        StringBuilder sb = new StringBuilder(string);
-        int length = string.length() / 4 + string.length();
-        for (int i = 0; i < length; i++) {
-            if (i % 5 == 0) {
-                sb.insert(i, " ");
+        if (null != string && !string.equals("")) {
+            StringBuilder sb = new StringBuilder(string);
+            int length = string.length() / 4 + string.length();
+            for (int i = 0; i < length; i++) {
+                if (i % 5 == 0) {
+                    sb.insert(i, " ");
+                }
             }
+            sb.deleteCharAt(0);
+            return sb.toString();
+        } else {
+            return string;
         }
-        sb.deleteCharAt(0);
-        return sb.toString();
     }
 
     /**
@@ -116,10 +125,15 @@ public class StringUtil {
      * @return string列表
      */
     public static List<String> stringListIntercept(String str, String s) {
-        List<String> strings;
-        String[] array = str.split(s);
-        strings = Arrays.asList(array);
-        return strings;
+        if (null != str && null != s) {
+            List<String> strings;
+            String[] array = str.split(s);
+            strings = Arrays.asList(array);
+            return strings;
+        } else {
+            List<String> strings = new ArrayList<>();
+            return strings;
+        }
     }
 
     /**
@@ -130,8 +144,13 @@ public class StringUtil {
      * @return string数组
      */
     public static String[] stringIntercept(String str, String s) {
-        String[] array = str.split(s);
-        return array;
+        if (null != str && null != s) {
+            String[] array = str.split(s);
+            return array;
+        } else {
+            String[] array = new String[0];
+            return array;
+        }
     }
 
     /**
