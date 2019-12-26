@@ -37,7 +37,6 @@ import androidx.core.content.ContextCompat;
  * @date 2019/12/2 9:35
  */
 public class BitmapImageUtil {
-
     /**
      * 将Bitmap转换成InputStream
      *
