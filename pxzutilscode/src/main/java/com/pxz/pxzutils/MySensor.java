@@ -228,7 +228,7 @@ public class MySensor {
                     collector[0]);
             float z1_z2 = chazhi(angleData.get(angleData.size() - 2)[0],
                     collector[0]);
-            // TODO 判断差直大小，在范围内添加，范围外置空所有数据重新添加
+
             if ((x1_x2 > 10 && x1_x2 != 0) || (y1_y2 > 10 && y1_y2 != 0)
                     || (z1_z2 > 10 && z1_z2 != 0)) {
                 angleData.removeAll(angleData);
