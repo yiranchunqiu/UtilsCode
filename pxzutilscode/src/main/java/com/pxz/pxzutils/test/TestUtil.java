@@ -47,10 +47,14 @@ public class TestUtil {
         String getUUIDFormatString=UUIDUtil.getUUIDFormat(getUUIDString);
         String getUUIDFormatString1=UUIDUtil.getUUIDFormat();
         int randomNumber=UUIDUtil.randomNumber(10,20);
+        String gitUUIDString1= getUUIDString.toUpperCase();
+        String gitUUIDString2= getUUIDFormatString.toUpperCase();
         System.out.println("uuid：" + getUUIDString);
         System.out.println("格式化之后的uuid：" + getUUIDFormatString);
         System.out.println("格式化之后的uuid：" + getUUIDFormatString1);
         System.out.println("随机数：" + randomNumber);
+        System.out.println("gitUUIDString1：" + gitUUIDString1);
+        System.out.println("gitUUIDString2：" + gitUUIDString2);
     }
 
     /**

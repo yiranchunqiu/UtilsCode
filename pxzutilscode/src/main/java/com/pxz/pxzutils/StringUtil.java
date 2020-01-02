@@ -355,6 +355,38 @@ public class StringUtil {
     }
 
     /**
+     * 大写转小写
+     *
+     * @param s 需要转换的字符串
+     * @return 转换之后的字符串
+     */
+    public static String upperToLower(String s) {
+        String string = "";
+        if (null != s && !"".equals(s)) {
+            string = s.toLowerCase();
+        } else {
+            string = s;
+        }
+        return string;
+    }
+
+    /**
+     * 小写转大写
+     *
+     * @param s 需要转换的字符串
+     * @return 转换之后的字符串
+     */
+    public static String lowerToUpper(String s) {
+        String string = "";
+        if (null != s && !"".equals(s)) {
+            string = s.toUpperCase();
+        } else {
+            string = s;
+        }
+        return string;
+    }
+
+    /**
      * 去除string中的html标签
      *
      * @param inputString string

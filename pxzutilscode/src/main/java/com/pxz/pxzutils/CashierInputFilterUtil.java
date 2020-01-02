@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 类说明：edittext限制金额输入工具类
+ * 类说明：edittext限制金额输入工具类(只能输入数字和.)(而且只能输入一个.)(0开头下一个只能输入.)
  * 联系：530927342@qq.com
  *
  * @author peixianzhong
